@@ -26,9 +26,8 @@ void loop() {
   digitalWrite(LED_BUILTIN, LOW);
   if (RS_Slave.available())
   {
-    digitalWrite(LED_BUILTIN, HIGH);
+    //digitalWrite(LED_BUILTIN, HIGH);
     Serial.write(RS_Slave.read());
-    delay(100);
   }
 }
 
