@@ -28,6 +28,13 @@ void loop() {
   {
     //digitalWrite(LED_BUILTIN, HIGH);
     Serial.write(RS_Slave.read());
+
+    if (Serial.available())
+    {
+      digitalWrite(RS_RTS, HIGH);
+      RS_Slave.write(Serial.read());
+      digitalWrite(RS_RTS, LOW);
+    }
   }
 }
 
